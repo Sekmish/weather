@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Погода</title>
+</head>
+<body>
+
+    <h1>Погода</h1>
+    <form action="/weather" method="GET">
+        <label for="city">Город:</label>
+        <input type="text" name="city" id="city">
+         <button type="submit">Получить данные</button>
+    </form>
+    <h1>Погода в городе {{ city }}</h1>
+{% if weather_data %}
+    <p>Температура: {{ weather_data.temperature }}°C</p>
+    <p>Давление: {{ weather_data.pressure }} мм рт. ст.</p>
+    <p>Скорость ветра: {{ weather_data.wind_speed }} м/с</p>
+{% else %}
+    <p>Данные о погоде отсутствуют</p>
+{% endif %}
+
+</body>
+</html>

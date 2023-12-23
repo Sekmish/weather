@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Телеграм Бот</title>
+</head>
+<body>
+    <h1>Телеграм Бот</h1>
+    <form action="/webhook/" method="POST">
+        {% csrf_token %}
+        <input type="text" name="city" placeholder="Введите название города">
+        <button type="submit">Узнать погоду</button>
+    </form>
+
+    {% if weather_data %}
+        <h2>Результаты погоды</h2>
+        <p>{{ weather_data }}</p>
+    {% endif %}
+
+
+    <h1>Прогноз погоды на весь день</h1>
+    <ul>
+        {% for item in forecast %}
+            <li>{{ item.date }} - Температура: {{ item.temperature }}°C, Влажность: {{ item.humidity }}%, Описание: {{ item.description }}</li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>
