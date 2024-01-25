@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 import requests
 from flask import Flask, render_template
 
-TELEGRAM_BOT_TOKEN = '6797287482:AAG3uZWCHRH1azp8MbD4Kmk2-0u9krF5UUw'
+TELEGRAM_BOT_TOKEN = ''
 OPENWEATHERMAP_API_KEY = '2aa647e59ede7609c9e1e96c990f2b63'
 
 
